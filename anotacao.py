@@ -1,12 +1,13 @@
+from datetime import datetime
 class Anotacao:
-	def __init__(self, titulo, data, descricao, pk):
+	def __init__(self, titulo, descricao,data,pk):
 		self.titulo = titulo
-		self.data = data
 		self.descricao = descricao
+		self.data = data
 		self.pk = pk
 
 	def obj2CSV(self):
-		return self.titulo + ";"+ self.data + ";" + self.descricao + ";" + str(self.pk)+";\n"
+		return self.titulo + ";" + self.descricao + ";" + self.data + ";" + str(self.pk)+";\n"
 
 	def csv2OBJ(self, linha):
 		aux = linha.strip().split(";")
